@@ -1,0 +1,157 @@
+<footer class="main-footer">
+  <div class="container-fluid">
+    <div class="row section1-footer">
+      <div class="col-md-6">
+        <ul class="social-footer">
+          <li>
+            <a href="{{ instagram }}" data-hover="hover-on-link" rel="nofollow" target="_blank">
+                <svg class="icon icon-instagram" viewBox="0 0 30 30" width="30" height="30">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-instagram"></use>
+                </svg>
+            </a>
+          </li>
+          <li>
+            <a href="{{ facebook }}" data-hover="hover-on-link" rel="nofollow" target="_blank">
+              <svg class="icon icon-faseboock" viewBox="0 0 30 30" width="30" height="30">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-faseboock"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <div class="registration-footer">
+          <p>{{ text_sale_registration }}</p>
+          {% if logged %}
+          <a href="{{ account }}" class="login-name">{{ LastName }} {{ FirstName }}</a>
+          {% else %}
+          <a href="javascript:void(0);" class="login-popup" data-toggle="modal" data-target="#loginModel">{{ text_footer_registration }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="row section2-footer">
+      <div class="col-md-9">
+        <nav class="hideen-sm hidden-xs">
+          <ul class="menu-footer">
+            <li><a href="index.php?route=product/category&path=59">{{ text_all_product }}</a></li>
+            <li><a href="{{ new }}">{{ text_new }}</a></li>
+            <li><a href="{{ sale }}">{{ text_sale }}</a></li>
+            <li><a href="{{ blog }}">{{ text_blog }}</a></li>
+          </ul>
+        </nav>
+        <hr>
+        <div class="information-footer">
+          {% if informations %}
+          <div class="col-md-3 col-sm-4 hidden-xs">
+            <h5>{{ text_information }}</h5>
+            <ul class="list-unstyled">
+             {% for information in informations %}
+              <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+              {% endfor %}
+              <li><a href="{{ return }}">{{ text_return }}</a></li>
+              <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+            </ul>
+          </div>
+          {% endif %}
+          <div class="col-md-3 col-sm-4 col-xs-6">
+            <h5>{{ text_account }}</h5>
+            <ul class="list-unstyled">
+              <li><a href="{{ account }}">{{ text_account }}</a></li>
+              <li><a href="{{ order }}">{{ text_order }}</a></li>
+              <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+              <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6">
+            <h5>{{ text_service }}</h5>
+            <ul class="list-unstyled">
+              <li><a href="tel:{{ telephone_href }}" title="Позвонить" data-hover="hover-on-link" rel="nofollow" target="_blank">{{ telephone }}</a></li>
+              <li><a href="tel:{{ telephone_href2 }}" title="Позвонить" data-hover="hover-on-link" rel="nofollow" target="_blank">{{ telephone2 }}</a></li>
+              <li><a href="mailto:{{ email }}" title="email" data-hover="hover-on-link" rel="nofollow" target="_blank">{{ email }}</a></li>
+              <li class="viber-footer">
+                <a href="viber://chat?number={{ viber }}" data-hover="hover-on-link" title="viber" rel="nofollow" target="_blank">
+                  <svg class="icon icon-viber" viewBox="0 0 30 30" width="30" height="30">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-viber"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="telegram-footer">
+                <a href="tg://resolve?domain={{ telegram }}" data-hover="hover-on-link" rel="nofollow" title="telegram" target="_blank">
+                  <svg class="icon icon-telegram" viewBox="0 0 30 30" width="30" height="30">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-telegram"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <div class="col-md-3 col-xs-12 foot-log">
+      <div class="logo-footer">{% if logo %}
+        <a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>{% else %}
+        <a>
+          <svg class="icon icon-logo" viewBox="0 0 120 120" width="120" height="120">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-logokwadra"></use>
+          </svg>
+        </a>
+        <a href="{{ home }}">iam.toko</a>
+        {% endif %}
+      </div>
+      <p class="reserv-footer">© 2021 IamToko.All Rights Reserved.</p>
+    </div>
+    </div>
+
+
+      <!-- Кнопка перезвоним -->
+
+    <a href="#modalCallbackFooterFooter" class="btn btn-link button-coll-side hidden-xs" id="button_callbackfooter" data-toggle="modal">{{ text_button_call_side }}<i class="fa fa-phone"></i></a>
+    <a href="#modalCallbackFooterFooter" class="btn btn-link button-coll-side hidden-md hidden-sm hidden-lg" id="button_callbackfooter" data-toggle="modal"><i class="fa fa-phone"></i></a>
+
+    <!-- Кнопка salepopup -->
+
+    <a href="#salepopup" class="button-coll-side button-sale-popup">
+      <i class="fa">
+        <svg class="icon icon-logo" viewBox="0 0 30 30" width="30" height="30">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-present"></use>
+        </svg>
+      </i>
+    </a>
+
+    <div class="relative">
+      <div class="scrollup">
+        <!-- Иконка fa-chevron-up (Font Awesome) -->
+        <i class="fa fa-chevron-up"></i>
+      </div>
+    </div>
+  </div>
+
+
+</footer>
+
+
+
+
+
+
+<!--Скидка попап-->
+<div class="hidden">
+  <div id="salepopup" class="sale-popup">
+    <img src="image/catalog/banners/skidka-zaregistrirovannym-pokupatelyam-iamtoko.png" alt="Скидка 10% зарегистрированным покупателям">
+    <div class="left-salepopup">{{ text_left_sale }}</div>
+    <div class="bottom-salepopup">{{ text_bottom_sale }}</div>
+    <div class="button-salepopup"><a href="javascript:void(0);" class="login-popup" data-toggle="modal" data-target="#loginModel">{{ text_footer_registration }}</a></div>
+  </div>
+</div>
+
+{% for script in scripts %}
+<script src="{{ script }}"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+
+<script src="catalog/view/theme/iamtoko/js/theme.js"></script>
+
+</body></html>

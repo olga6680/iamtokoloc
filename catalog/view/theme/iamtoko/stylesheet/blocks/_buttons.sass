@@ -1,0 +1,35 @@
+.all-button
+  display: block
+  text-transform: lowercase
+  text-decoration: none
+  color: #7f8c8d
+  background: #fefefe
+  padding: 5px 8px 30px
+  border: 1px solid #bdc3c7
+  border-radius: 3px
+  margin: 20px auto
+  text-align: center
+  display: block
+  width: 220px
+  position: relative
+  background-image: linear-gradient(to top, #f4f1ee, #fff)
+  height: 25px
+  transition: all .1s linear
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204,198,197,.5)
+  &:after
+    content: ""
+    background: linear-gradient(to right, #2ecc71 10%, #3498db 10%, #3498db 20%, #8e44ad 20%, #8e44ad 30%, #e67e22 30%, #e67e22 40%, #c0392b 40%, #c0392b 50%, #2ecc71 50%, #2ecc71 60%, #3498db 60%, #3498db 70%, #8e44ad 70%, #8e44ad 80%, #e67e22 80%, #e67e22 90%, #c0392b 90%)
+    background-size: 200% 100%
+    display: inline-block
+    width: 100%
+    height: 4px
+    position: absolute
+    left: 0
+    bottom: 0
+  &:hover
+    background-image: -webkit-linear-gradient(to top, #fff, #f4f1ee)
+    background-image: linear-gradient(to top, #fff, #f4f1ee)
+  &:active
+    background-image: -webkit-linear-gradient(to top, #efedec, #f7f4f4)
+    background-image: linear-gradient(to top, #efedec, #f7f4f4)
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5)

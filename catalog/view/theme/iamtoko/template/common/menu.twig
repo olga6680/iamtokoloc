@@ -1,0 +1,85 @@
+<ul class="menu">
+    <li class="menu__item">
+        <a href="/" class="menu__link" data-class='home_is_visible' data-hover="hover-on-link">{{ text_home }}</a>
+    </li>
+    <li class="menu__item">
+        <a href="{{ all_product }}" class="menu__link" data-hover="hover-on-link">{{ text_all_clothes }}</a>
+    </li>
+    <li class="menu__item">
+        {% if categories %}
+        <ul class="menu__sub" id="sub-menu">
+            <li class="menu__sub__item"><a href='{{ new }}' data-hover="hover-on-link">{{ text_new }}</a></li>
+            <li class="menu__sub__item"><a href='{{ sale }}' data-hover="hover-on-link">{{ text_sale }}</a></li>
+            {% for category in categories %} {% if category.children %}
+            <li class="menu__sub__item menu__main">
+                <a href="{{ category.href }}" class="see-all">{{ category.name }}</a> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+                <ul class="menu__category">
+                    {% for child in children %}
+                    <li class="menu__child"><a href="{{ child.href }}">{{ child.name }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </li>
+            {% else %}
+            <li class="menu__sub__item menu__main"><a href="{{ category.href }}">{{ category.name }}</a></li>
+            {% endif %} {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    <li class="menu__item">
+        <a href="{{ about_us_toko }}" class="menu__link" data-hover="hover-on-link">{{ text_about_us_toko }}</a>
+    </li>
+    <li class="menu__item">
+        <a href="{{ delivery_toko }}" class="menu__link" data-hover="hover-on-link">{{ text_delivery_toko }}</a>
+    </li>
+    <li class="menu__item">
+        <a href="/index.php?route=extension/module/p_review/all" class="menu__link" data-hover="hover-on-link">{{ text_reviews_toko }}</a>
+    </li>
+    <li class="menu__item">
+        <a href="{{ blog_toko }}" class="menu__link" data-hover="hover-on-link">{{ text_blog_toko }}</a>
+    </li>
+    <li class="menu__item">
+        <a href="/index.php?route=information/information&amp;information_id=28" class="menu__link" data-hover="hover-on-link">{{ text_support_menu }}</a>
+    </li>
+    <li class="menu__item">
+        <a href="{{ contact }}" class="menu__link" data-hover="hover-on-link">{{ text_contact_toko }}</a>
+
+    </li>
+    <li class="menu__item">
+        <ul class="menu__contact" id="sub-contact">
+            <li class="menu__contact__item"><a href="tel:{{ telephone_href }}" title="Позвонить" data-hover="hover-on-link" rel="nofollow">{{ telephone }}</a></li>
+            <li class="menu__contact__item"><a href="tel:{{ telephone_href2 }}" title="Позвонить" data-hover="hover-on-link" rel="nofollow">{{ telephone2 }}</a></li>
+            <li class="menu__contact__item"><a href="mailto:{{ email }}" title="email" data-hover="hover-on-link" rel="nofollow" target="_blank">{{ email }}</a></li>
+            <li class="menu__contact__item menu_social">
+                <div>
+                    <a href="viber://chat?number={{ viber }}" data-hover="hover-on-link" title="viber" rel="nofollow" target="_blank">
+                        <svg class="icon icon-viber" viewBox="0 0 30 30" width="30" height="30">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-viber"></use>
+                </svg>
+                    </a>
+                </div>
+                <div>
+                    <a href="tg://resolve?domain={{ telegram }}" data-hover="hover-on-link" title="viber" rel="nofollow" target="_blank">
+                        <svg class="icon icon-telegram" viewBox="0 0 30 30" width="30" height="30">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-telegram"></use>
+                </svg>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{ instagram }}" data-hover="hover-on-link" rel="nofollow" target="_blank">
+                        <svg class="icon icon-instagram" viewBox="0 0 30 30" width="30" height="30">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-instagram"></use>
+                </svg>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{ facebook }}" data-hover="hover-on-link" rel="nofollow" target="_blank">
+                        <svg class="icon icon-faseboock" viewBox="0 0 30 30" width="30" height="30" data-hover="hover-on-link" rel="nofollow" target="_blank">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="image\sprite.svg#icon-faseboock"></use>
+                </svg>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>

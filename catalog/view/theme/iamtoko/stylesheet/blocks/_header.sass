@@ -1,0 +1,147 @@
+.header
+  &__link
+    display: flex
+    justify-content: space-between
+    list-style: none
+    padding: 2px 30px 4px 30px
+    margin: 0
+  &__item
+    &:not(:last-child)
+      border-right: 1px solid $light-grey
+      padding-right: 70px
+    a
+      color: $text-color
+      text-transform: lowercase
+      font-size: 12px
+      span
+        font-size: 14px
+        color: $main-color
+      &:hover, &:focus
+        color: $main-color
+        text-decoration: none
+  &__nav
+    background-color: $dark-grey
+  &__logo
+    position: absolute
+    top: 50%
+    right: 34px
+    transform: translateY(-50%)
+    font-size: 30px
+    font-weight: 700
+    letter-spacing: 8px
+    a
+      color: #fff
+      &:hover, &:focus
+        text-decoration: none
+        color: $main-color
+    span
+      font-size: 16px
+      letter-spacing: 5px
+  &__right
+    position: relative
+    height: 45px
+  &__right-menu
+    display: flex
+    justify-content: space-between
+    height: 45px
+    width: 100%
+    padding: 8px 0 0 40px
+    span
+      color: #fff
+      font-size: 12px
+      font-weight: 600
+      &:hover, &:focus
+        text-decoration: none
+        color: $main-color
+    svg
+      fill: #fff
+      &:hover, &:focus
+        fill: $main-color
+  &__accaunt
+    .dropdown-menu
+      padding: 10px 0 18px 12px
+      top: 94%
+  &__phone
+    .dropdown-menu
+      top: 94%
+    &__link
+      span
+        color: $text-color
+    .menu_social
+      width: 100%
+      margin-top: 20px
+      padding: 0 10px
+      svg
+        fill: $text-color
+        width: 29px
+        height: auto
+      div:nth-child(1), div:nth-child(2)
+        margin-top: 5px
+      div:nth-child(3), div:nth-child(4)
+        svg
+          width: 22px
+  &__wishlist
+    &:hover, &:focus
+      text-decoration: none
+      color: $main-color
+  &__cart
+    .dropdown-menu
+      padding: 25px 13px 18px 12px
+      top: 104%
+  &__language
+    padding: 0
+    margin: 0
+    .pull-left
+      img
+        margin-top: -14px
+    .dropdown-menu
+      top: 105%
+      padding-bottom: 25px
+      margin-left: -128px
+      img
+        margin: 0 10px 0 20px
+		.btn-group
+			.btn-link
+        padding: 0
+        margin: 0
+        padding-top: 10px
+        text-transform: lowercase
+        color: $text-color
+        text-align: left
+        .fa
+          display: none
+        span
+          display: none
+        img
+          width: 17px
+          height: 15px
+          border-radius: 50%
+        &:hover, &:focus
+          text-decoration: none
+  #form-language .btn-group .btn-link
+    &:hover, &:focus
+      background-color: transparent
+      text-decoration: underline
+      color: $main-color
+
+.fixed
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 10001
+
+.menu-left
+  position: relative
+  height: 45px
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.dropdown-menu
+  border-radius: 0
+  > li > a
+    &:hover, &:focus
+      background-color: transparent
+      text-decoration: underline
+      color: $main-color

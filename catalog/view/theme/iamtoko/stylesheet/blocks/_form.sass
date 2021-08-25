@@ -1,0 +1,182 @@
+.form-group
+  div
+    margin-bottom: 20px
+.form-control
+	border-radius: 0
+
+/*---------Форма регистрации попап---------*/
+.content
+	background-color: #fff
+	position: relative
+	max-width: 320px
+	margin: auto
+	padding: 15px
+	top: 25%
+	.social-registration
+		position: relative
+		width: 100%
+		height: 40px
+		margin-top: 30px
+		font:
+			family: 'Roboto Condensed', sans-serif
+			size: 18px
+	.social-icons
+		display: inline-block
+		position: absolute
+		right: 0
+		top: 0
+		li
+			list-style: none
+			float: right
+			margin-left: 20px
+			svg
+				fill: #94929e
+				&:hover, &:focus
+					fill: $main-color
+	.registration-sub
+		h3
+			text-align: center
+			font:
+				family: 'Roboto Condensed', sans-serif
+			margin-bottom: -10px
+		a
+			color: $main-color
+			font-weight: 600
+		br
+			margin-bottom: 10px
+		.smile
+			text-align: center
+			font-weight: 600
+		span
+			font-size: 12px
+			br
+				margin-bottom: 0
+	.login-form
+		.form-group
+			margin-top: 25px
+			margin-bottom: 25px
+		#loginBtn
+			border-radius: 0
+			color: #ffffff
+			font-weight: 400
+			font-size: 18px
+			text-transform: lowercase
+			outline: none
+			transition: background-color, border-color .25s ease
+			background-color: rgba(148, 146, 158, .7)
+			border-color: rgba(148, 146, 158, .7)
+			&:hover, &:focus
+				background-color: rgba(148, 146, 158, .5)
+				border-color: rgba(148, 146, 158, .5)
+		.forget-password
+			color: #120e10
+			margin-left: 23%
+			text-decoration: underline
+			&:hover, &:focus
+				text-decoration: none
+		.block-title
+			display: inline-block
+			width: 100%
+			text-align: center
+			font:
+				family: 'Roboto Condensed', sans-serif
+				size: 18px
+				weight: 400
+			color: #ffffff
+			text-transform: uppercase
+			.sign-in, .create-account
+				text-align: center
+				padding: 10px
+			.sign-in
+				background: $main-color
+			.create-account
+				background: #120e10
+				a
+					color: #fff
+	.register-form
+		.block-title
+			display: inline-block
+			text-align: center
+			width: 100%
+			font:
+				family: 'Roboto Condensed', sans-serif
+				size: 18px
+				weight: 400
+			color: #ffffff
+			text-transform: uppercase
+			#register-back-btn, .create-account
+				width: 50%
+				padding: 10px
+			#register-back-btn
+				border-radius: 0
+				background: #120e10
+				font-size: .95em
+				&:hover, &:focus
+					color: #ffffff
+					text-decoration: underline
+			.create-account
+				background: $main-color
+		p
+			font-size: 12px
+			text-align: center
+			margin-top: 10px
+			margin-bottom: 15px
+		.mt-checkbox
+			font-weight: 400
+			font-size: 12px
+			a
+				color: $main-color
+		#register-submit-btn
+			border-radius: 0
+			position: relative
+			left: 50%
+			transform: translate(-50%, 0)
+			font-weight: 400
+			font-size: 18px
+			text-transform: lowercase
+			outline: none
+			transition: background-color, border-color .25s ease
+			background-color: rgba(148, 146, 158, .7)
+			border-color: rgba(148, 146, 158, .7)
+			&:hover, &:focus
+				background-color: rgba(148, 146, 158, .5)
+				border-color: rgba(148, 146, 158, .5)
+	.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label
+		color: $main-color
+	.has-error .form-control
+		border-color: $main-color
+	.forget-form
+		h3
+			font-family: 'Roboto Condensed', sans-serif
+			text-align: center
+		.form-group
+			margin: 20px 0
+		button
+			border-radius: 0
+			color: #ffffff
+			text-transform: lowercase
+			font-size: 18px
+		#back-btn
+			background-color: rgba(0, 0, 0, 1)
+			transition: background-color, border-color .25s ease
+			font-size: 17px
+			&:hover, &:focus
+				background-color: rgba(0, 0, 0, .8)
+				border-color: rgba(0, 0, 0, .8)
+		#forget-submit-btn
+			background-color: rgba(255, 102, 196, 1)
+			border: rgba(255, 102, 196, 1)
+			transition: background-color, border-color .25s ease
+			&:hover, &:focus
+				background-color: rgba(255, 102, 196, .8)
+				border-color: rgba(255, 102, 196, .8)
+	.alert-success, .alert-danger
+		border-radius: 0
+.login .content .forget-form,
+.login .content .register-form
+	display: none
+
+#tab-data
+	.form-group
+		.dropdown-menu
+			height: auto

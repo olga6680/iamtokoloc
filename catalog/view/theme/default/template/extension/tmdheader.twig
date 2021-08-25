@@ -1,0 +1,71 @@
+<div class="container-fluid menugz hidden-sm hidden-xs">
+	<nav class="navbar">
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href='{{ new }}' data-hover="hover-on-link">{{ text_new }}</a></li>
+				<li class="dropdown mega-dropdown">
+					<a href="{{ all_product }}" class="dropdown-toggle" data-toggle="dropdown">{{ text_all_clothes }}</a>
+					<div class="dropdown-menu mega-dropdown-menu row">
+						<div class="col-md-4 menu-categorygz">
+							{% if categories %}
+							<h2>{{ catalog_menugz }}</h2>
+							<ul>
+								{% for category in categories %}
+								{% if category.children %}
+								<li class="category-main">
+									<div class="categorygz">
+										<img src="{{ category.thumb }}" alt="{{ category.name }}">
+										<a href="{{ category.href }}" class="see-all">{{ category.name }}</a>
+									</div>
+									{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+									<ul class="scroll-category">
+										{% for child in children %}
+										<li class="category-child">
+											<img src="{{ child.thumb }}" alt="{{ child.name }}">
+											<a href="{{ child.href }}">{{ child.name }}</a>
+										</li>
+										{% endfor %}
+									</ul>
+									{% endfor %}
+								</li>
+								{% else %}
+								<li>
+									<img src="{{ category.thumb }}" alt="{{ category.name }}">
+									<a href="{{ category.href }}">{{ category.name }}</a>
+								</li>
+								{% endif %}
+								{% endfor %}
+							</ul>
+							{% endif %}
+						</div>
+						<div class="col-md-4 menu-bestgz">
+							<h2>{{ sale_menugz }}</h2>
+								<div class="col-md-6">
+									<a href="{{ choice_buyers }}">
+										<img src="image\catalog\menu\100px.jpg" alt="{{ text_choice_buyers }}">
+										<span>{{ text_choice_buyers }}</span>
+									</a>
+								</div>
+								<div class="col-md-6">
+									<a href="{{ sale_day }}">
+										<img src="image\catalog\menu\100px-1.jpg" alt="{{ text_sale_day }}">
+										<span>{{ text_sale_day }}</span>
+									</a>
+								</div>
+						</div>
+						<div class="col-md-4 all-menugz">
+							<a href="{{ all_product }}">
+								<img src="image\catalog\menu\260x325px.jpg" alt="{{ button_all_product }}">
+							</a>
+							<a href="{{ all_product }}" class="button-menugz">{{ button_all_product }}</a>
+						</div>
+					</div>
+				</li>
+				<li><a href="{{ big_toko }}">{{ text_big_toko }}</a></li>
+				<li><a href="{{ blog_toko }}">{{ text_blog }}</a></li>
+				<li class="sale-menugz"><a href="{{ sale }}">{{ text_sale }}</a></li>
+			</ul>
+</div>
+	</nav>
+
+</div>

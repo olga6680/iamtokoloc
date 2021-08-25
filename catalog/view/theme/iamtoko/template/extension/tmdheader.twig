@@ -1,0 +1,97 @@
+<div class="menugz hidden-sm hidden-xs">
+    <div class="container">
+        <nav class="menugz__navbar navbar">
+            <div class="menugz__wrap">
+                <ul class="menugz__navbar-nav nav navbar-nav">
+                    <li class="menugz__link">
+                        <a href="{{ new }}" data-hover="hover-on-link">{{ text_new }}</a>
+                    </li>
+                    <li class="menugz__link menugz__dropdown">
+                        <a href="{{ all_product }}" data-hover="hover-on-link">{{ text_all_clothes }}</a>
+                        <div class="menugz__drop row">
+                            <div class="col-md-4 menugz__categorys">
+                                {% if categories %}
+                                <h2 class="menugz__title">{{ catalog_menugz }}</h2>
+                                <ul class="menugz__list">
+                                    {% for category in categories %} {% if category.children %}
+                                    <li class="menugz__list__thumb category-main">
+                                        <div class="menugz__category">
+                                            <div class="menugz__img"><img src="{{ category.thumb }}" alt="{{ category.name }}"></div>
+                                            <div><a class="menugz__links menugz__category_link" href="{{ category.href }}" class="see-all">{{ category.name }}</a></div>
+                                        </div>
+                                        {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+                                        <ul class="scroll-category menugz__list">
+                                            {% for child in children %}
+                                            <li class="menugz__list__thumb category-child">
+                                                <div class="menugz__category">
+                                                    <div class="menugz__img"><img src="{{ child.thumb }}" alt="{{ child.name }}"></div>
+                                                    <div><a class="menugz__links menugz__category_link" href="{{ child.href }}">{{ child.name }}</a></div>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endfor %}
+                                    </li>
+                                    {% else %}
+                                    <li class="menugz__list__thumb category-main">
+                                        <div class="menugz__category">
+                                            <div class="menugz__img"><img src="{{ category.thumb }}" alt="{{ category.name }}"></div>
+                                            <div><a class="menugz__links menugz__category_link" href="{{ category.href }}">{{ category.name }}</a></div>
+                                        </div>
+                                    </li>
+                                    {% endif %} {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-4">
+                                <h2 class="menugz__title">{{ sale_menugz }}</h2>
+                                <div class="menugz__offers">
+                                    <div class="menugz__choise">
+                                        <a class="menugz__links" href="{{ choice_buyers }}">
+                                            <img src="image\catalog\menu\100px.jpg" alt="{{ text_choice_buyers }}">
+                                            <span>{{ text_choice_buyers }}</span>
+                                        </a>
+                                    </div>
+                                    <div class="menugz__saleday">
+                                        <a class="menugz__links" href="{{ sale_day }}">
+                                            <img src="image\catalog\menu\100px-1.jpg" alt="{{ text_sale_day }}">
+                                            <span>{{ text_sale_day }}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 menugz__image">
+                                <a class="menugz__links" href="{{ all_product }}" data-hover="hover-on-link">
+                                    <img src="image\catalog\menu\260x325px.jpg" alt="{{ button_all_product }}">
+                                </a>
+                            </div>
+                            <div class="menugz__button col-md-12">
+                                <a href="{{ all_product }}" data-hover="hover-on-link" class="all-button">{{ button_all_product }}</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menugz__link">
+                        <a href="{{ blog_toko }}" data-hover="hover-on-link">{{ text_blog }}</a>
+                    </li>
+                    <li class="menugz__link menugz__link_sale">
+                        <a href="{{ sale }}" data-hover="hover-on-link">{{ text_sale }}</a>
+                    </li>
+                    <li class="menugz__link menugz__dropdown">
+                        <a href="/index.php?route=information/information&amp;information_id=28" data-hover="hover-on-link">{{ text_help }}</a>
+                        <div class="menugz__drop menugz__drop_help">
+                            <ul class="menugz__list">
+                                <li class="menugz__list_help" data-hover="hover-on-link"><a class="menugz__links" href="/index.php?route=information/information&amp;information_id=28">{{ text_faq }}</a></li>
+                                <li class="menugz__list_help" data-hover="hover-on-link"><a class="menugz__links" href="/index.php?route=information/information&amp;information_id=6">{{ text_delivery }}</a></li>
+                                <li class="menugz__list_help" data-hover="hover-on-link"><a class="menugz__links" href="/index.php?route=account/return/add">{{ text_add }}</a></li>
+                                <li class="menugz__list_help" data-hover="hover-on-link"><a class="menugz__links" href="/index.php?route=information/information&information_id=33">{{ text_action }}</a></li>
+                                <li class="menugz__list_help" data-hover="hover-on-link"><a class="menugz__links" href="/index.php?route=information/information&amp;information_id=4">{{ text_us }}</a></li>
+                                <li class="menugz__list_help" data-hover="hover-on-link"><a class="menugz__links" href="/index.php?route=extension/module/p_review/all">{{ text_rewiev }}</a></li>
+                                <li class="menugz__list_help" data-hover="hover-on-link"><a class="menugz__links" href="/index.php?route=information/contact">{{ text_contact }}</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

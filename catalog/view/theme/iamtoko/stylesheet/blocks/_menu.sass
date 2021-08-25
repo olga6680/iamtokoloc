@@ -1,0 +1,91 @@
+.menu
+  position: fixed
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  top: 0
+  left: -100%
+  height: 100vh
+  width: 400px
+  list-style: none
+  margin: 0
+  padding: 0
+  background-color: $dark-grey
+  overflow-y: auto
+  scrollbar-color: $main-color $dark-grey
+  scrollbar-width: thin
+  transition: 0.6s all
+  &_active
+    left: 0
+  &__item
+    font-size: 18px
+    padding: 20px 0 5px 30px
+    a
+      color: #fff
+    &:nth-child(3)
+      padding: 15px 0
+  &__sub
+    padding: 20px 10px
+    background-color: #fff
+    list-style: 0
+    margin: 0 5px
+    min-height: 200px
+    li a
+      color: $text-color
+    &__item
+      list-style: none
+      font-size: 16px
+      padding: 10px 0
+  &__child
+    list-style: none
+  &__category, &__contact
+    padding: 0
+    margin: 0
+  &__contact
+    &__item
+      margin-bottom: 20px
+  &__right
+    position: relative
+    height: 45px
+.menu_social
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 60%
+  margin-top: 40px
+  div:nth-child(1), div:nth-child(2)
+    margin-top: 5px
+  div:nth-child(3), div:nth-child(4)
+    svg
+      width: 25px
+  svg
+    fill: #fff
+    &:hover, &:focus
+      fill: $main-color
+
+.hamburger
+  display: block
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translateY(-50%)
+  width: 30px
+  height: 18px
+  cursor: pointer
+  span
+    display: block
+    height: 2px
+    width: 100%
+    background-color: #fff
+    margin-bottom: 4px
+    transition: 0.5s all
+  &_active
+    left: -13%
+    span
+      margin-bottom: -2px
+      &:nth-child(1)
+        transform: translateY(5px) rotate(-45deg)
+      &:nth-child(2)
+        display: none
+      &:nth-child(3)
+        transform: translateY(5px) rotate(45deg)

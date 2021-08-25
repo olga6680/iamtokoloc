@@ -1,0 +1,103 @@
+.menugz
+  background: $grey-color
+  height: 40px
+  .container
+    height: 40px
+  &__navbar
+    height: 40px
+  &__wrap
+    width: 457px
+    height: 40px
+    margin: 0 auto
+  &__navbar-nav
+    height: 40px
+  &__link
+    font-size: 16px
+    a
+      padding: 6px 15px !important
+      color: #fff
+      height: 39px
+      &:hover, &:focus
+        color: $text-color
+    &_sale
+      background-color: $main-color
+      transform: skew(-12deg)
+  &__drop
+    display: none
+    position: absolute
+    top: 39px
+    width: 992px
+    min-height: 350px
+    left: 40%
+    transform: translateX(-40%)
+    z-index: 1000
+    background-color: #fff
+    box-shadow: 0 6px 12px rgba(0,0,0,.175)
+    &_help
+      display: none
+      width: 200px
+      min-height: 250px
+      padding: 20px
+  &__title
+    font-size: 14px
+    text-align: center
+    font-weight: 700
+    text-transform: uppercase
+  &__links
+    color: $text-color !important
+  &__list
+    list-style: none
+    padding: 0
+    margin: 0
+    &_help
+      margin: 5px 0
+    &__thumb
+      list-style: none
+      padding: 0
+      margin: 0
+      margin: 5px 0
+  &__category
+    display: flex
+    justify-content: center
+    align-items: center
+    vertical-align: middle
+    &_link
+      font-size: 14px
+      margin-left: 10px
+  &__offers
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 50px
+    div
+      text-align: center
+      img
+        border-radius: 100%
+      span
+        color: $grey-color
+        font-weight: 700
+        font-size: 14px
+  &__image
+    margin-top: 20px
+  &__button a
+    color: #7f8c8d !important
+    margin-top: 0
+
+  .category-main
+    text-transform: uppercase
+    text-align: center
+    font-size: 12px
+  .category-child
+    text-transform: none
+  .col-md-4
+    height: 350px
+  .col-md-4
+    border-right: 2px dotted $light-grey
+  &__image.col-md-4
+    border-right: none
+
+  &__dropdown:hover .menugz__drop
+    display: block !important
+
+.navbar
+  height: 40px
